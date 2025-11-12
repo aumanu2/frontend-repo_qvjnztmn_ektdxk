@@ -1,26 +1,30 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import WorkoutPlanner from './components/WorkoutPlanner'
+import MealPlanner from './components/MealPlanner'
+import ProgressTracker from './components/ProgressTracker'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-cyan-50">
+      <Navbar />
+      <Hero />
+
+      <div className="mx-auto max-w-6xl px-4 py-12 grid gap-12" id="learn">
+        <div className="rounded-xl border bg-white/70 p-6">
+          <h3 className="text-xl font-semibold">How it works</h3>
+          <p className="mt-2 text-gray-600">Plan your workouts and meals and track your progress — all stored locally in your browser so it works offline and requires no sign-in.</p>
+          <ul className="mt-4 grid md:grid-cols-3 gap-4 text-sm">
+            <li className="rounded-lg border p-4 bg-white">Create detailed workout plans for each day with sets and reps.</li>
+            <li className="rounded-lg border p-4 bg-white">Build meal plans and calculate total calories automatically.</li>
+            <li className="rounded-lg border p-4 bg-white">Log your weight and notes, and visualize trends over time.</li>
+          </ul>
         </div>
       </div>
+
+      <WorkoutPlanner />
+      <MealPlanner />
+      <ProgressTracker />
     </div>
   )
 }
